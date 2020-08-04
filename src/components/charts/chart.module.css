@@ -1,0 +1,116 @@
+.q_graph {
+  display: block;
+  margin: 1.1em 0 0;
+  padding: 0;
+  background: transparent;
+}
+
+.q_graph .qtr {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.q_graph .rowData {
+  height: 296px;
+  padding-top: 2px;
+}
+.q_graph .q1 {
+  left: 200px;
+  bottom: 74px;
+}
+.q_graph .q2 {
+  left: 500px;
+  bottom: 74px;
+}
+.q_graph .headData {
+  bottom: -3.75em;
+  vertical-align: top;
+  font-weight: normal;
+}
+.q_graph .bar {
+  width: 60px;
+  border: 1px solid;
+  border-bottom: none;
+  color: #000;
+}
+.q_graph .bar .price {
+  margin: 5px 0 0;
+  padding: 0;
+  top: -40px;
+  position: relative;
+  color: #2a3536;
+}
+.q_graph .sent {
+  background-color: #49dcfa;
+  border-color: transparent;
+}
+
+.ticks {
+  margin-top: 40px;
+}
+
+.ticks .tick {
+  position: relative;
+  margin-left: 60px;
+  border-top: 1px solid #c4c4c4;
+  height: 59px;
+}
+
+.ticks .tick .priceLst {
+  position: absolute;
+  left: -4em;
+  top: -0.8em;
+  margin: 0 0 0 0.5em;
+}
+
+.tick_empty .priceLstEmpty {
+  left: -1.5em !important;
+  position: absolute;
+  top: -12px;
+}
+@media (max-width: 319px) {
+  .mwb_bar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 350px) and (min-width: 320px) {
+  .q_graph .q1 {
+    left: 100px;
+  }
+  .q_graph .q2 {
+    left: 200px;
+  }
+}
+
+@media screen and (max-width: 500px) and (min-width: 351px) {
+  .q_graph .q1 {
+    left: 100px;
+  }
+  .q_graph .q2 {
+    left: 260px;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 501px) {
+  .q_graph .q1 {
+    left: 150px;
+  }
+  .q_graph .q2 {
+    left: 350px;
+  }
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .q_graph .q1 {
+    bottom: 78px;
+    left: 150px;
+  }
+  .q_graph .q2 {
+    bottom: 78px;
+    left: 350px;
+  }
+}
