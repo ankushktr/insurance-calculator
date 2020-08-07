@@ -108,11 +108,11 @@
 
 @media screen and (max-width: 991px) and (min-width: 768px) {
   .q_graph .q1 {
-    bottom: 78px;
+    bottom: 96px;
     left: 150px;
   }
   .q_graph .q2 {
-    bottom: 78px;
+    bottom: 96px;
     left: 350px;
   }
 }
