@@ -45,7 +45,7 @@ export class Recover extends PureComponent {
           <input
             type='text'
             className={`form-control ${classess.mwb_medicare}`}
-            value={
+            defautvalue={
               recoverPrice !== "" ? parseInt(recoverPrice).toLocaleString() : ""
             }
             onChange={(e) => {

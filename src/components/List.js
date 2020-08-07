@@ -14,18 +14,30 @@ class List extends Component {
       mwbTxt4: "",
       mwbTxt5: "",
       recoverTxt: "",
+      typingTimeout: 0,
     };
   }
 
   changePriceHandler = (e, type) => {
-    const regexp = /^[0-9\b]+$/;
-    if (
-      (e.target.value === "" ||
-        regexp.test(e.target.value.replace(/,/g, ""))) &&
-      e.target.value.replace(/,/g, "").length < 11
-    ) {
-      this.setState({ [type]: e.target.value.replace(/,/g, "") });
+    e.persist();
+    const { typingTimeout } = this.state;
+
+    if (typingTimeout) {
+      clearTimeout(typingTimeout);
     }
+
+    this.setState({
+      typingTimeout: setTimeout(() => {
+        const regexp = /^[0-9\b]+$/;
+        if (
+          (e.target.value === "" ||
+            regexp.test(e.target.value.replace(/,/g, ""))) &&
+          e.target.value.replace(/,/g, "").length < 11
+        ) {
+          this.setState({ [type]: e.target.value.replace(/,/g, "") });
+        }
+      }, 3000),
+    });
   };
 
   render() {
@@ -61,7 +73,7 @@ class List extends Component {
                 <label data-domain='/ month' data-symbol='$'>
                   <input
                     type='text'
-                    value={
+                    defautvalue={
                       mwbTxt1 !== "" ? parseInt(mwbTxt1).toLocaleString() : ""
                     }
                     className='form-control mt-2 pl-4'
@@ -90,7 +102,7 @@ class List extends Component {
                   <input
                     type='text'
                     className='form-control mt-2 pl-4'
-                    value={
+                    defautvalue={
                       mwbTxt2 !== "" ? parseInt(mwbTxt2).toLocaleString() : ""
                     }
                     onChange={(e) => this.changePriceHandler(e, "mwbTxt2")}
@@ -118,7 +130,7 @@ class List extends Component {
                   <input
                     type='text'
                     className='form-control mt-2 pl-4'
-                    value={
+                    defautvalue={
                       mwbTxt3 !== "" ? parseInt(mwbTxt3).toLocaleString() : ""
                     }
                     onChange={(e) => this.changePriceHandler(e, "mwbTxt3")}
@@ -146,7 +158,7 @@ class List extends Component {
                   <input
                     type='text'
                     className='form-control mt-2 pl-4'
-                    value={
+                    defautvalue={
                       mwbTxt4 !== "" ? parseInt(mwbTxt4).toLocaleString() : ""
                     }
                     onChange={(e) => this.changePriceHandler(e, "mwbTxt4")}
@@ -174,7 +186,7 @@ class List extends Component {
                   <input
                     type='text'
                     className='form-control mt-2 pl-4'
-                    value={
+                    defautvalue={
                       mwbTxt5 !== "" ? parseInt(mwbTxt5).toLocaleString() : ""
                     }
                     onChange={(e) => this.changePriceHandler(e, "mwbTxt5")}
