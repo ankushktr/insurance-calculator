@@ -11,7 +11,7 @@ function Chart(props) {
 
   const result = Object.values(mwbDetails).filter(
     (word, index) =>
-      word.length > 0 && index < Object.values(mwbDetails).length - 1
+      word.length > 0 && index < Object.values(mwbDetails).length - 2
   );
 
   let listSum = 0,
@@ -55,13 +55,13 @@ function Chart(props) {
   };
   return (
     <div className={classess.mwb_bar}>
-      <table className={classess.q_graph}>
-        <tbody>
-          <tr className={`${classess.qtr} ${classess.q1} ${classess.rowData}`}>
-            <th scope='row' className={`${classess.qtr} ${classess.headData}`}>
+      <div className={classess.q_graph}>
+        <div>
+          <div className={`${classess.qtr} ${classess.q1} ${classess.rowData}`}>
+            <div className={`${classess.qtr} ${classess.headData}`}>
               Estimated Cost
-            </th>
-            <td
+            </div>
+            <div
               className={`${classess.sent} ${classess.bar} ${classess.qtr}`}
               style={mwbBarStyle1.costTodayHeight}
             >
@@ -72,13 +72,13 @@ function Chart(props) {
                       parseInt(costList).toString().substring(0, 7)
                     ).toLocaleString()}`}
               </p>
-            </td>
-          </tr>
-          <tr className={`${classess.qtr} ${classess.q2} ${classess.rowData}`}>
-            <th scope='row' className={`${classess.qtr} ${classess.headData}`}>
+            </div>
+          </div>
+          <div className={`${classess.qtr} ${classess.q2} ${classess.rowData}`}>
+            <div className={`${classess.qtr} ${classess.headData}`}>
               Estimated Cost
-            </th>
-            <td
+            </div>
+            <div
               className={`${classess.sent} ${classess.bar} ${classess.qtr}`}
               style={mwbBarStyle1.costAfterHeight}
             >
@@ -89,10 +89,10 @@ function Chart(props) {
                       parseInt(constListInflamtion).toString().substring(0, 7)
                     ).toLocaleString()}`}
               </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className={classess.ticks}>
         <div className={classess.tick}>

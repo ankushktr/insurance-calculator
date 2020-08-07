@@ -46,6 +46,8 @@
 .q_graph .sent {
   background-color: #49dcfa;
   border-color: transparent;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
 }
 
 .ticks {
